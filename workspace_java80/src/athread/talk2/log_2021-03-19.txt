@@ -1,0 +1,7 @@
+Server Ready.........
+client info:Socket[addr=/127.0.0.1,port=52618,localport=3002]
+100#애플
+애플님이 입장하였습니다.
+client info:Socket[addr=/127.0.0.1,port=52625,localport=3002]
+100#ghfhfhfd
+ghfhfhfd님이 입장하였습니다.
