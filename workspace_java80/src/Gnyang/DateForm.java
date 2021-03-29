@@ -20,7 +20,6 @@ public class DateForm extends JFrame {
 
 	JButton[]					dates				= new JButton[42];
 	JLabel						jl_title			= new JLabel();
-
 	int							year				= 0;
 	int							month				= 0;
 	int							nowMonth			= 0;
