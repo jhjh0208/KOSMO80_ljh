@@ -25,6 +25,6 @@ public class MyBatisCommonFactory {
 				}
 			}
 		}
-		return;
+		return sqlSessionFactory;
 	}
 }

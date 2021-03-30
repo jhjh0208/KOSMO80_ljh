@@ -6,14 +6,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DBConnectionMgr { 
-	private final static String		_DRIVER	= "oracle.jdbc.driver.OracleDriver";
-	private final static String		_URL	= "jdbc:oracle:thin:@localhost:1521:orcl11";
-	private final static String		_USER	= "as97164";
-	private final static String		_PW		= "tiger";
-	private static DBConnectionMgr	dbMgr	= null;
+public class DBConnectionMgr {
+	private final static String _DRIVER = "oracle.jdbc.driver.OracleDriver";
+	private final static String _URL = "jdbc:oracle:thin:@127.0.0.1:1521:orcl11";
+	private final static String _USER = "as97164";
+	private final static String _PW = "tiger";
+	private static DBConnectionMgr dbMgr = null;
 	// 이른 인스턴스화 eager
-	Connection						con		= null;
+	Connection con = null;
 
 	private DBConnectionMgr() {
 	}
@@ -32,17 +32,13 @@ public class DBConnectionMgr {
 		try {
 			Class.forName(_DRIVER);
 			con = DriverManager.getConnection(_URL, _USER, _PW);
-			/* 트랜잭션처리
-			con.setAutoCommit(true);//켜둔다.
-			con.setAutoCommit(false);//꺼둔다.
-			con.commit();
-			con.rollback();
-			*/
-		}
-		catch (ClassNotFoundException ce) {
+			/*
+			 * 트랜잭션처리 con.setAutoCommit(true);//켜둔다. con.setAutoCommit(false);//꺼둔다.
+			 * con.commit(); con.rollback();
+			 */
+		} catch (ClassNotFoundException ce) {
 			ce.printStackTrace();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return con;
@@ -60,8 +56,7 @@ public class DBConnectionMgr {
 				pstmt.close();
 			if (con != null)
 				con.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -76,8 +71,7 @@ public class DBConnectionMgr {
 				cstmt.close();
 			if (con != null)
 				con.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -92,8 +86,7 @@ public class DBConnectionMgr {
 				pstmt.close();
 			if (con != null)
 				con.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
