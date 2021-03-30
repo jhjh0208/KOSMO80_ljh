@@ -58,6 +58,7 @@ public class DateForm extends JFrame {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					
 					JOptionPane.showMessageDialog(null, String.format("선택한 날짜 : %s-%02d-%02d", year, month,
 												Integer.parseInt(dates[idx].getText())));
 				}
