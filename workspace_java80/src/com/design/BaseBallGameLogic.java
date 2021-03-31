@@ -1,10 +1,11 @@
 package com.design;
 
-public class BaseBallGameLogic{
-	int[]		com			= new int[3];
-	int[]		my			= new int[3];
-	 //JTexaArea에 순번 출력하기
-	   int cnt = 0;
+public class BaseBallGameLogic {
+	int[]	com	= new int[3];
+	int[]	my	= new int[3];
+	// JTexaArea에 순번 출력하기
+	int		cnt	= 0;
+
 	public void nanSu() {
 		com[0] = (int) (Math.random() * 10);
 

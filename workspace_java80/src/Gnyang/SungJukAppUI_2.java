@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
-public class SungJukAppUI extends JFrame implements ActionListener {
+public class SungJukAppUI_2 extends JFrame implements ActionListener {
 	// 선언부
 	JLabel						jlb_inwon		= new JLabel("성적처리인원수:", JLabel.RIGHT);
 	JLabel						jlb_num			= new JLabel("명", JLabel.LEFT);
@@ -26,7 +26,6 @@ public class SungJukAppUI extends JFrame implements ActionListener {
 	JButton						jbtn_create		= new JButton("만들기");
 	JButton						jbtn_account	= new JButton("처리");
 	JButton						jbtn_exit		= new JButton("나가기");
-	JButton						jbtn_add		= new JButton("추가");
 	JPanel						jp1				= new JPanel();
 	JPanel						jp2				= new JPanel();
 	JPanel						jp3				= new JPanel();
@@ -102,7 +101,6 @@ public class SungJukAppUI extends JFrame implements ActionListener {
 		jp2.add("West", jlb_num);
 		jp2.add("Center", jbtn_create);
 		jp1.add("East", jp2);
-		jp3.add(jbtn_add);
 		jp3.add(jbtn_account);
 		jp3.add(jbtn_exit);
 		this.add("North", jp1);
@@ -115,14 +113,15 @@ public class SungJukAppUI extends JFrame implements ActionListener {
 	// 메인메소드
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		SungJukAppUI sja = new SungJukAppUI();
+		SungJukAppUI_2 sja = new SungJukAppUI_2();
 		sja.initDisplay();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		if (e.getSource() == jtf_inwon	|| e.getSource() == jbtn_create) {
+		if (e.getSource() == jtf_inwon
+									|| e.getSource() == jbtn_create) {
 			num = Integer.parseInt(jtf_inwon.getText().trim());
 			System.out.println("num : " + num);
 			dtm = new DefaultTableModel(num, 8);
@@ -186,24 +185,45 @@ public class SungJukAppUI extends JFrame implements ActionListener {
 		} ////////////// end of if ////////////
 		else if (e.getSource() == jbtn_account) {
 			// 총점과 석차
-		}
-		else if (e.getSource() == jbtn_add) {
-			String[][]	data	= {
-					{ "홍길동", "80", "75", "85" },
-					{ "이성계", "90", "85", "80" },
-					{ "강감찬", "70", "75", "70" }
-			};
-			int a = 0;
-			int	b = 0;
+			double[][] imsi = new double[num][2];
+			System.out.println("dtm:" + dtm + "," + dtm.getValueAt(0, 1));
+
+			for (int i = 0; i < num; i++) {
+				int tot = Integer.parseInt(dtm.getValueAt(i, 2).toString())
+											+ Integer.parseInt(dtm.getValueAt(i, 3).toString())
+											+ Integer.parseInt(dtm.getValueAt(i, 4).toString());
+				imsi[i][0] = tot;
+				double davg = 0.0;
+				davg = imsi[i][0] / 3.0;
+				imsi[i][1] = davg;
+				// System.out.println(imsi[i][0]+", "+imsi[i][1]);
+				dtm.setValueAt(tot, i, 5);
+				dtm.setValueAt(tot / 3, i, 6);
+
+			}
+			int[][] sukcha = new int[num][2];
 
 			for (int i = 0; i < 3; i++) {
+				sukcha[i][1] = 1;
 
-				for (int j = 0; j < 4; j++) {
-					a = i;
-					b = j + 1;
-					dtm.setValueAt(data[i][j], a, b);
+				for (int j = 0; j < 3; j++) {
+
+					if (sukcha[i][0] < sukcha[j][0]) {
+						sukcha[i][1] = sukcha[i][1] + 1;
+
+					}
+
 				}
+
 			}
+
+			for (int i = 0; i < 3; i++) {
+				dtm.setValueAt(sukcha[i][1], i, 7);
+			}
+
 		} ////////////// end of 처리 버튼 구현
+		
+		
 	}////////////////// end of actionPerformed
+
 }

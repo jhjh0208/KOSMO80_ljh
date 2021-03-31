@@ -52,14 +52,14 @@ public class DateForm extends JFrame {
 
 		for (int i = 0; i < dates.length; i++) {
 			dates[i] = new JButton();
-			dates[i].setBorder(new LineBorder(Color.orange));
+			dates[i].setBorder(new LineBorder(Color.black));
 			int idx = i;
 			dates[i].addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					JOptionPane.showMessageDialog(null, String.format("선택한 날짜 : %s-%02d-%02d", year, month,
+					JOptionPane.showMessageDialog(null, String.format("선택한 이거 뭐야 : %s-%02d-%02d", year, month,
 												Integer.parseInt(dates[idx].getText())));
 				}
 			});
