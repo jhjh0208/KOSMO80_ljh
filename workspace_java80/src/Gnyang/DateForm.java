@@ -133,7 +133,7 @@ public class DateForm extends JFrame {
 		cal.set(Calendar.MONTH, month); // 입력받은 월로 세팅
 		cal.set(year, month - 1, 1); // 입력받은 월의 1일로 세팅
 		// month는 0이 1월이므로 -1을 해준다
-
+	
 		int	end			= cal.getActualMaximum(Calendar.DATE);	// 해당 월 마지막 날짜
 		int	dayOfWeek	= cal.get(Calendar.DAY_OF_WEEK);		// 해당 날짜의 요일(1:일요일 … 7:토요일)
 
