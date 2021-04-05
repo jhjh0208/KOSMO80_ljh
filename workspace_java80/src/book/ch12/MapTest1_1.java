@@ -13,6 +13,8 @@ public class MapTest1_1 {
 		li.add(0, "사과");
 		li.add(1, "포도");
 		li.add(2, "딸기");
+		li.add(3,"수박");
+		li.add(4,"참외");
 
 		for (String fruit : li) {
 			System.out.println(fruit);
