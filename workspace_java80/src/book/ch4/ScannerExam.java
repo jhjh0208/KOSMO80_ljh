@@ -16,7 +16,9 @@ public class ScannerExam {
 		r.nextInt(10);
 		System.out.println(r.nextInt(10));
 		
-		if(r==sc)
+		if(sc.nextInt() == r.nextInt()) {
+			System.out.println("ff");
+		}
 	}
 
 }

@@ -32,4 +32,4 @@ public class DeptVO {
 		this.loc = loc;
 	}
 }
-}
+

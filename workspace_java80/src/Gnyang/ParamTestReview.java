@@ -3,7 +3,7 @@ package Gnyang;
 public class ParamTestReview {
 
 	void getParam(ParamReview P) {
-		P = new ParamReview();
+//		P = new ParamReview();
 		P.ival = 500;
 		
 		System.out.println(P.ival);

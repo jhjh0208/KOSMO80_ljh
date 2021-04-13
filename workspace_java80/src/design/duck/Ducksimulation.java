@@ -9,11 +9,11 @@ public class Ducksimulation {
 		Duck herDuck = new RubberDuck();
 		herDuck.display();
 		herDuck.performFly();
-		herDuck.perforQuack();
+		herDuck.performQuack();
 		Duck himDuck = new MallardDuck();
 		himDuck.display();
 		himDuck.performFly();
-		himDuck.perforQuack();
+		himDuck.performQuack();
 		
 		
 		//myDuck.performQuack();

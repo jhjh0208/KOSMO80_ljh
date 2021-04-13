@@ -18,7 +18,7 @@ public class SwitchTest {
 		String s_input = st.nextToken();
 		System.out.println(protocol);
 		System.out.println(s_id);
-		System.out.);
+//		System.out.);
 		
 		//제어문의 역할은 업무 순서에 대한 흐음을 바꾼다.
 		//순서에 대한 정보를 바탕으로 의사를 결정할 수 있는 것은 팀장,차장,부장 선택자

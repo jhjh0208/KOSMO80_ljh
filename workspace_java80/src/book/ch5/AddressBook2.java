@@ -19,11 +19,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import com.util.DBConnectionMgr;
+import com.vo.DeptVO;
+import com.vo.EmpVO;
 
 import network.step1.TimeClient;
-
-import com.VO.DeptVO;
-import com.VO.EmpVO;
 
 public class AddressBook2 implements ActionListener{
    //선언부

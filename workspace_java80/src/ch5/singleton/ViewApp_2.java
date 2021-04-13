@@ -16,11 +16,11 @@ public class ViewApp_2 implements ActionListener{
 	public void initDisplay() {
 		jf2 = new JFrame();
 		jbtn = new JButton();
-		jbtn.setText("전송");
+		jbtn.setText("전송555");
 		jbtn = new JButton("전송");
 		//이벤트 소스와 이벤트 처리를 담당하는 클래스를 연결해 주어야 함.
 		//이벤트 처리를 담당하는 클래스를 이벤트 핸들러 클래스라고 한다.
-		//이벤트 처리를 담당허는 클래스는 번드시 actionPerFormed라는 
+		//이벤트 처리를 담당하는 클래스는 반드시 actionPerFormed라는 
 		//메소드를 오버라이딩 해야한다. 
 		jbtn.addActionListener(this);
 		//이벤트 처리 메소드가 외부에 있을 때는

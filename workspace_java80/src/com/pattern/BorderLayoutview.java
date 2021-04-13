@@ -18,13 +18,15 @@ public class BorderLayoutview {
 		JFrame jf = new JFrame();
 		//JFrame의 배치 레이아웃을 정함.
 		jf.setLayout(new BorderLayout());
-		//
-		//
-		jf.add("south",jbtn_south);
-		
-		
-		
-		
+		//@param1:위치정보, @param2:주소번지
+		jf.add("North",jbtn_north);
+		jf.add("South",jbtn_south);
+		jf.add("Center",jbtn_center);
+		jf.add("East",jbtn_east);
+		jf.add("West",jbtn_west);
+		jf.setTitle("BorderLayout");
+		jf.setSize(500, 400);
+		jf.setVisible(true);
 	}
 
 }

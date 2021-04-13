@@ -10,8 +10,8 @@ public class ObjectArray {
 	public static void main(String[] args) {
 		//JFrame은 윈도우 운영체제에서 창을 띄울 때 사용하는 클래스입니다.
 		JFrame jf = new JFrame();
-		//그 창(화면)안에 버튼을 배치하기 위해서 Layout에 대헌 설정이 필요함.
-		//똑같은 크기의 벙이 10개가 필요하다. -행렬적인 느낌
+		//그 창(화면)안에 버튼을 배치하기 위해서 Layout에 대한 설정이 필요함.
+		//똑같은 크기의 방이 10개가 필요하다. -행렬적인 느낌
 		
 		jf.setLayout(new GridLayout(1,10));
 		JButton jbtns[] = new JButton[10];

@@ -7,7 +7,8 @@ package book.ch7;
  * 
  * 주의사항
  * 1.리턴타입이 있고 없고는 영향이 없다.
- * 2.접근제한자가 있고 없고 또는 다른것은 영향이 없다.(public>protected[패키지가 다르더라도 상속관계에 있다면 가능]>friendly[같은 패키지 안에서만]>)
+ * 2.접근제한자가 있고 없고 또는 다른것은 영향이 없다.
+ * (public>protected[패키지가 다르더라도 상속관계에 있다면 가능]>friendly[같은 패키지 안에서만]>private)
  */
 
 public class Array4 {
@@ -17,8 +18,9 @@ public class Array4 {
 		ds = new double[3];
 		d2 = 3.14;
 		d3 = new double[2];
-		d4 = 5.1;
-		d4 = new double[5];
+//		d4 = 5.1;
+//		d4 = new double[5];
+		d4[3] = 2.3;
 	}
 	public static void main(String[] args) {
 		Array4 a4 = new Array4();

@@ -83,7 +83,7 @@ public class TimeServer extends Thread {
 		// return "10:24:15";
 		// 삼항연산자 변수 비교연산자 ? 참일 때 : 거짓일 때
 		return ((hour < 10 )?( "0" + hour ):( "" + hour)) + ":" + (min < 10 ? "0" + min : "" + min) + ":"
-				+ (sec < 10 ? "0" + sec : "" + sec)+ "바보";
+				+ (sec < 10 ? "0" + sec : "" + sec);
 
 	}
 

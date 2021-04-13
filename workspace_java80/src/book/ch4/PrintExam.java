@@ -18,14 +18,15 @@ public class PrintExam {
 		sc2 = new Scanner(System.in);
 		System.out.println("당신의 나이를 입력하세요.");
 		System.out.println("======================================");
-		System.out.println(sc.nextInt());
+//		System.out.println(sc.nextInt());
 		//디폴트 생성자를 제공해줌.
 		Random r = new Random();//채번하기, 난수 발생하기, 
+		int count = 1;
+		int cnt =0;
 		for(int i=0;i<10;i=i+2) {
 			int dap = r.nextInt(10);
-			int a = 0;
-			a = a+1;
-			System.out.println(++a +"회차 "+i+":"+dap);
+			System.out.println(count++ +":"+dap);
+			System.out.println(++cnt +":"+dap);
 		}
 		
 		

@@ -1,6 +1,5 @@
 package book.ch7;
-//전제 조건은 반드시 메소드 이름이 같을 때만 고려함.
-import com.VO.DeptVO;
+import com.vo.DeptVO;
 
 public class MethodOverloading {
 	void go() {

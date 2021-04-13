@@ -1,7 +1,7 @@
 package com.quiz0222;
 
-import com.VO.Member80VO;
 import com.google.gson.Gson;
+import com.vo.Member80VO;
 
 public class MemberList80VO {
 

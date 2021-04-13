@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.VO.EmpVO;
+import com.vo.EmpVO;
 
 /*
  * 물리적으로 떨어져 있는 192.168.0.24번 서버에 접속하려고 한다.

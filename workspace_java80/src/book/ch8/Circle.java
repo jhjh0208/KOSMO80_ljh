@@ -4,7 +4,7 @@ public class Circle extends Shape {
 	final static double PI = 3.14;
 	int r = 3;
 	@Override
-	void area() {
+	void area() { 
 		double area = r*r*PI;
 		System.out.println("원의 면적은 "+area);
 	}
@@ -16,7 +16,10 @@ public class Circle extends Shape {
 	@Override
 	void fillDraw() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
+	
+
+	
 }

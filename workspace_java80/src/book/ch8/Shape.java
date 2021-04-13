@@ -5,8 +5,9 @@ public abstract class Shape {
 	void draw() {
 		System.out.printf("[color=%s]%n",color);
 	}
-	abstract void fillDraw2() {
-		
-	}
+	abstract void area();
+//	abstract void fillDraw2() {
+//		
+//	}
 	abstract void fillDraw();
 }

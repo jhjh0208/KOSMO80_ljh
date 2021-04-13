@@ -13,6 +13,7 @@ public class RectAngle extends Shape {
 	void area() {
 		double area = 0.0;
 		area = width*height;
+		System.out.println("사각형의 면적은"+area);
 	}
 
 }

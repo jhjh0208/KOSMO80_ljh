@@ -7,7 +7,7 @@ public abstract class Duck {
 	FlyBehavior flyBehavior = null;
 	QuackBehavior quackBehavior = null;
 	public Duck() {
-		System.out.println("디폴트 생성자 호풀 성공");
+		System.out.println("디폴트 생성자 호출 성공");
 	}
 	public abstract void display();
 	public void performFly() {

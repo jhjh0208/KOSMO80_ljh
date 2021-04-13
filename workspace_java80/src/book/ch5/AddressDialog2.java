@@ -14,7 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import com.util.DBConnectionMgr;
-import com.VO.DeptVO;
+import com.vo.DeptVO;
 
 public class AddressDialog2 extends JDialog implements ActionListener {
    static DBConnectionMgr    dbMgr    = null;

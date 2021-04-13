@@ -40,3 +40,4 @@ public class TestClass {
 		dbmgr.freeConnection(con, pstmt, rs);
 
 }
+}
