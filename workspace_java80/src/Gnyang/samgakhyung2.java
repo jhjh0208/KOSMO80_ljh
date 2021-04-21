@@ -22,26 +22,26 @@ public class samgakhyung2 {
 			}
 			System.out.println("");
 		}
+		
+		for (int k = 1; k < length; k++) {
+			
+			for (int s = 0; s < length; s++) {
+				
+				if (k <= s) {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
 	}
-}
-			else if (i == length) {
 
-					for (int k = 0; k < length; k++) {
 
-						for (int s = 0; s < length; s++) {
-
-							if (k <= s) {
-								System.out.print("*");
-							}
-						}
-						System.out.println();
-					}
+			
+			
+			
+			
 			}
-			}
-			}
-			}
-			}
-			}
+			
 	
 			
 		

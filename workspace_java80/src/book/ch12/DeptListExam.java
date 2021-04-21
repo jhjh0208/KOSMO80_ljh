@@ -2,6 +2,10 @@ package book.ch12;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,9 +19,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import com.design.zipcode.ZipCodeVO;
+import com.util.DBConnectionMgr;
 import com.vo.DeptVO;
 
-public class DeptList extends JFrame implements ActionListener {
+public class DeptListExam extends JFrame implements ActionListener {
 
 	// 선언부
 	JButton				jbtn_search	= new JButton("조회");
@@ -26,14 +32,19 @@ public class DeptList extends JFrame implements ActionListener {
 	DefaultTableModel	dtm			= null;
 	JTable				jtb			= null;
 	JScrollPane			jsp			= null;
+	Connection			con			= null;
+	PreparedStatement	pstmt		= null;
+	ResultSet			rs			= null;
+	DBConnectionMgr		dbmgr		= DBConnectionMgr.getInstance();
+	String				sql			= "SELECT deptno,dname,loc FROM dept";
 
 	// 생성자
-	public DeptList() {// 인스턴스화가 될 때 즉시 화면이 그려지도록
+	public DeptListExam() {// 인스턴스화가 될 때 즉시 화면이 그려지도록
 		initDisplay();
 	}
 
 	public void tableCreate() {
-		dtm = new DefaultTableModel(new Object[3][3], cols);
+		dtm = new DefaultTableModel(new Object[4][3], cols);
 		jtb = new JTable(dtm);
 		jsp = new JScrollPane(jtb);
 		this.add("Center", jsp);
@@ -43,30 +54,44 @@ public class DeptList extends JFrame implements ActionListener {
 	public List<Map<String, Object>> getDeptList() {
 		System.out.println("getDeptList 호출성공");
 		List<Map<String, Object>>	deptList	= new ArrayList<>();
-		Map<String, Object>			r1			= new HashMap<>();
-		r1.put("deptno", 10);
-		r1.put("dname", "인사부");
-		r1.put("loc", "서울");
-		deptList.add(r1);
-		r1 = new HashMap<>();
-		r1.put("deptno", 20);
-		r1.put("dname", "총무부");
-		r1.put("loc", "서울");
-		deptList.add(r1);
-		r1 = new HashMap<>();
-		r1.put("deptno", 30);
-		r1.put("dname", "개발부");
-		r1.put("loc", "제주");
-		deptList.add(r1);
-		System.out.println(deptList);
+		Map<String, Object>			voMap		= null;
+
+		// TODO insert here
+
+		con = dbmgr.getConnection();
+
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		try {
+
+			while (rs.next()) {
+				voMap = new HashMap<String, Object>();
+				voMap.put("deptno", rs.getString("deptno"));
+				voMap.put("dname", rs.getString("dname"));
+				voMap.put("loc", rs.getString("loc"));
+				deptList.add(voMap);
+				System.out.println(deptList);
+
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 		return deptList;
 	}
 
-	// 데이터 수집하기2
-	public List<DeptVO> getDeptList2() {
-		System.out.println("getDeptList2 호출성공");
-		return null;
-	}
+//	// 데이터 수집하기2
+//	public List<DeptVO> getDeptList2() {
+//		System.out.println("getDeptList2 호출성공");
+//		return null;
+//	}
 
 	// 화면처리부
 	public void initDisplay() {
@@ -81,7 +106,7 @@ public class DeptList extends JFrame implements ActionListener {
 
 	// 메인메소드
 	public static void main(String[] args) {
-		new DeptList();
+		new DeptListExam();
 	}
 
 	@Override

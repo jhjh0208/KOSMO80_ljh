@@ -5,11 +5,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class DBConnectionMgr {
 	private final static String _DRIVER = "oracle.jdbc.driver.OracleDriver";
 	private final static String _URL = "jdbc:oracle:thin:@127.0.0.1:1521:orcl11";
-	private final static String _USER = "as97164";
+	private final static String _USER = "SCOTT";
 	private final static String _PW = "tiger";
 	private static DBConnectionMgr dbMgr = null;
 	// 이른 인스턴스화 eager
@@ -38,7 +39,7 @@ public class DBConnectionMgr {
 			 */
 		} catch (ClassNotFoundException ce) {
 			ce.printStackTrace();
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return con;
