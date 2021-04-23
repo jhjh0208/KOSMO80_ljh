@@ -1,5 +1,7 @@
 package book.ch5;
 
+import com.vo.EmpVO;
+
 public class DeptVO {
 	public EmpVO getEvo() {
 		return evo;
